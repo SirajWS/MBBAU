@@ -3,37 +3,37 @@ const projects = [
     name: "Neubau EFH Musterhausen",
     category: "Neubau",
     scope: "Rohbau, Trockenbau, Fliesenarbeiten",
-    status: "In Planung",
+    focus: "Von der Planung bis zur schlüsselfertigen Übergabe",
   },
   {
     name: "Betonsanierung Brücke B14",
     category: "Sanierung",
     scope: "Betoninstandsetzung und Tragwerksverstärkung",
-    status: "Abgeschlossen",
+    focus: "Substanzerhalt mit DIN-gerechter Ausführung",
   },
   {
     name: "Trockenbauausbau Bürogebäude",
     category: "Trockenbau",
     scope: "Innenausbau, Decken- und Trennwandsysteme",
-    status: "In Ausführung",
+    focus: "Flexible Raumkonzepte für moderne Arbeitswelten",
   },
   {
     name: "Fliesenprojekt Wellnessbad",
     category: "Fliesen",
     scope: "Großformat-Fliesen, Abdichtung, Detailarbeiten",
-    status: "Abgeschlossen",
+    focus: "Präzise Verarbeitung für langlebige Oberflächen",
   },
   {
     name: "Abbruch Industriehalle",
     category: "Abbruch",
     scope: "Rückbau inkl. Entsorgung und Baustellenlogistik",
-    status: "Abgeschlossen",
+    focus: "Sicherer Ablauf mit sauberer Baustellenkoordination",
   },
   {
     name: "Stahlbau Lagerhalle",
     category: "Stahlbau",
     scope: "Stahlkonstruktion mit Montage und Korrosionsschutz",
-    status: "In Ausführung",
+    focus: "Tragfähige Konstruktionen mit hoher Präzision",
   },
 ];
 
@@ -50,8 +50,8 @@ export default function ProjectsSection() {
         </h2>
 
         <p className="mt-4 max-w-3xl text-sm text-brand-black/70">
-          Da aktuell noch keine Projektfotos vorliegen, zeigen wir unsere Referenzen transparent
-          als Projektsteckbriefe mit Leistungsumfang und Status.
+          Als neue Firma zeigen wir hier beispielhafte Projektarten aus unserem Leistungsspektrum.
+          So erhalten Sie einen klaren Eindruck, welche Bauaufgaben wir professionell umsetzen.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -67,9 +67,11 @@ export default function ProjectsSection() {
               <p className="mt-4 text-sm leading-relaxed text-brand-black/75">{project.scope}</p>
               <div className="mt-6 flex items-center justify-between border-t border-brand-black/10 pt-4">
                 <span className="text-xs uppercase tracking-[0.2em] text-brand-black/60">
-                  Status
+                  Projektfokus
                 </span>
-                <span className="text-sm font-semibold text-brand-black">{project.status}</span>
+                <span className="text-right text-sm font-semibold text-brand-black">
+                  {project.focus}
+                </span>
               </div>
             </article>
           ))}
