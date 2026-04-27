@@ -15,22 +15,20 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "MB Bau GmbH – Ihr Bauunternehmen in der Region",
+  title: "MB Bau UG – Trockenbau, Renovierung & Innenausbau",
   description:
-    "MB Bau GmbH bietet Neubau, Sanierung, Trockenbau, Fliesenarbeiten, Stahl- und Betonbau sowie Abbrucharbeiten. Zuverlässig, präzise, professionell.",
+    "MB Bau UG: Ausbau, Renovierung, Trockenbau, Baustellenservice und Projektkoordination. Transparent und professionell.",
   keywords: [
-    "Bauunternehmen",
-    "Neubau",
-    "Sanierung",
+    "MB Bau UG",
     "Trockenbau",
-    "Fliesenarbeiten",
-    "Stahlbau",
-    "Abbruch",
+    "Renovierung",
+    "Innenausbau",
+    "Baukoordination",
   ],
   openGraph: {
-    title: "MB Bau GmbH – Ihr Bauunternehmen in der Region",
+    title: "MB Bau UG – Bauen. Sanieren. Vertrauen.",
     description:
-      "Zuverlässig. Präzise. Professionell. MB Bau GmbH für Neubau und Sanierung.",
+      "Ausbau, Renovierung und Baukoordination – eigene Leistungen und qualifizierte Partner.",
     images: ["/og-image-placeholder.jpg"],
   },
 };

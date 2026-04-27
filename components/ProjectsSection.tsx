@@ -50,8 +50,8 @@ export default function ProjectsSection() {
         </h2>
 
         <p className="mt-4 max-w-3xl text-sm text-brand-black/70">
-          Als neue Firma zeigen wir hier beispielhafte Projektarten aus unserem Leistungsspektrum.
-          So erhalten Sie einen klaren Eindruck, welche Bauaufgaben wir professionell umsetzen.
+          Beispielhafte Projektarten aus unserem Leistungsspektrum – so wird deutlich, welche
+          Aufgaben wir professionell und strukturiert anpacken.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

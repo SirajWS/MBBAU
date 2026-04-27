@@ -5,35 +5,37 @@ type BrandLogoProps = {
 
 export default function BrandLogo({ compact = false, onDark = false }: BrandLogoProps) {
   const textMain = onDark ? "text-brand-white" : "text-brand-black";
-  const textSub = onDark ? "text-brand-white/85" : "text-brand-gold";
+  const textSub = onDark ? "text-brand-white/75" : "text-brand-gold";
 
   return (
     <div className="inline-flex items-center gap-3">
-      <div className="relative w-[64px]">
-        <svg viewBox="0 0 100 55" className="h-5 w-16" aria-hidden="true">
-          <path
-            d="M10 44 L50 14 L85 35"
-            fill="none"
-            stroke="#C49A2A"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-        </svg>
-        <p className={`heading-font -mt-1 text-[35px] uppercase leading-none tracking-tight ${textMain}`}>
-          MB
-        </p>
+      <div
+        className={
+          onDark
+            ? "flex h-12 w-12 items-center justify-center rounded-sm border border-brand-white/20 bg-brand-white text-brand-black"
+            : "flex h-12 w-12 items-center justify-center rounded-sm border border-brand-black/15 bg-brand-black text-brand-white"
+        }
+      >
+        <span className="heading-font text-2xl uppercase leading-none">MB</span>
       </div>
       {!compact ? (
         <div>
-          <p className={`heading-font text-base uppercase tracking-[0.28em] ${textMain}`}>MB Bau GmbH</p>
-          <p className={`text-[11px] uppercase tracking-[0.22em] ${textSub}`}>
-            Zuverlässig. Präzise. Professionell.
+          <p className={`heading-font text-base uppercase tracking-[0.14em] ${textMain}`}>
+            MB Bau UG
+          </p>
+          <p className={`text-[10px] uppercase leading-tight tracking-[0.18em] ${textSub}`}>
+            Bauen. Sanieren. Vertrauen.
           </p>
         </div>
       ) : (
-        <p className={`heading-font text-lg uppercase tracking-[0.22em] ${textMain}`}>
-          MB Bau
-        </p>
+        <div>
+          <p className={`heading-font text-sm uppercase leading-tight tracking-wide ${textMain}`}>
+            MB Bau UG
+          </p>
+          <p className={`text-[9px] uppercase leading-tight tracking-wide ${textSub}`}>
+            Bauen. Sanieren. Vertrauen.
+          </p>
+        </div>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { siteEmail, sitePhone, sitePhoneTel, siteRegion } from "@/lib/site";
 
 type ContactFormValues = {
   name: string;
@@ -11,12 +12,15 @@ type ContactFormValues = {
 };
 
 const services = [
-  "Stahl- und Betonbau",
-  "Neubau",
-  "Abbrucharbeiten",
   "Trockenbau",
-  "Sanierung",
-  "Fliesenarbeiten",
+  "Bodenarbeiten",
+  "Einfache Abbrucharbeiten",
+  "Montagearbeiten",
+  "Innenausbau und Renovierung",
+  "Gebäudeservice und Baustellenservice",
+  "Kabelverlegung ohne Anschluss",
+  "Bauleitung und Organisation",
+  "Weitere Leistung (Partnergewerke)",
 ];
 
 export default function ContactSection() {
@@ -40,21 +44,30 @@ export default function ContactSection() {
             <span className="h-px w-10 bg-brand-gold" />
             Kontakt
           </p>
-          <h2 className="heading-font text-5xl uppercase text-brand-black md:text-6xl">
+          <h2 className="heading-font text-4xl uppercase text-brand-black md:text-5xl">
             Lassen Sie uns Ihr Projekt besprechen
           </h2>
+          <p className="mt-4 text-sm text-brand-black/70">Einsatzgebiet: {siteRegion}</p>
           <dl className="mt-8 space-y-3 text-brand-black/85">
             <div>
               <dt className="font-semibold">Telefon:</dt>
-              <dd>+49 (0) 123 456 789</dd>
+              <dd>
+                <a href={sitePhoneTel} className="text-lg font-semibold hover:text-brand-gold">
+                  {sitePhone}
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="font-semibold">E-Mail:</dt>
-              <dd>info@mb-bau-gmbh.de</dd>
+              <dd>
+                <a href={`mailto:${siteEmail}`} className="hover:text-brand-gold">
+                  {siteEmail}
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="font-semibold">Adresse:</dt>
-              <dd>Musterstraße 12, 12345 Musterstadt</dd>
+              <dd>Musterstraße 12, 10115 Berlin (bitte anpassen)</dd>
             </div>
             <div>
               <dt className="font-semibold">Öffnungszeiten:</dt>

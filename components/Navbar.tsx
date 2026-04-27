@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import BrandLogo from "./BrandLogo";
 
@@ -31,11 +31,11 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
-        <Link href="#" aria-label="Startseite" className="text-brand-white">
+        <Link href="/" aria-label="Startseite" className="text-brand-white">
           <BrandLogo compact onDark />
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -47,17 +47,18 @@ export default function Navbar() {
           ))}
           <a
             href="#kontakt"
-            className="rounded-md bg-brand-gold px-4 py-2 text-sm font-semibold text-brand-black transition hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-md bg-brand-gold px-4 py-2 text-sm font-semibold text-brand-black transition hover:-translate-y-0.5"
           >
+            <FileText size={16} />
             Angebot anfragen
           </a>
         </div>
 
         <button
           type="button"
-          onClick={() => setOpen((prev) => !prev)}
-          className="rounded border border-brand-white/20 p-2 text-brand-white md:hidden"
-          aria-label="Menü öffnen"
+          onClick={() => setOpen((v) => !v)}
+          className="rounded border border-brand-white/20 p-2 text-brand-white lg:hidden"
+          aria-label="Menü"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>
@@ -70,7 +71,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.25 }}
-            className="absolute right-0 top-full w-72 bg-brand-black p-6 shadow-xl md:hidden"
+            className="absolute right-0 top-full w-80 max-w-[100vw] bg-brand-black p-6 shadow-xl lg:hidden"
           >
             <div className="flex flex-col gap-4">
               {links.map((link) => (
@@ -86,8 +87,9 @@ export default function Navbar() {
               <a
                 href="#kontakt"
                 onClick={() => setOpen(false)}
-                className="rounded-md bg-brand-gold px-4 py-2 text-center font-semibold text-brand-black"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-gold py-2 font-semibold text-brand-black"
               >
+                <FileText size={16} />
                 Angebot anfragen
               </a>
             </div>

@@ -34,6 +34,14 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M0 80L80 0'/%3E%3Cpath d='M-20 80L80 -20'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.hero-showcase {
+  background:
+    linear-gradient(90deg, rgba(244, 242, 239, 0.97) 0%, rgba(244, 242, 239, 0.88) 42%, rgba(244, 242, 239, 0.2) 100%),
+    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-link {
   position: relative;
 }

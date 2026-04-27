@@ -1,9 +1,9 @@
 import { Award, BadgeCheck, Building, Handshake } from "lucide-react";
 
 const indicators = [
-  { icon: Award, text: "Über 15 Jahre Erfahrung" },
+  { icon: Award, text: "Strukturierte Projektabwicklung" },
   { icon: BadgeCheck, text: "DIN-gerechte Ausführung" },
-  { icon: Handshake, text: "Festpreisgarantie" },
+  { icon: Handshake, text: "Transparente Angebote" },
   { icon: Building, text: "Regionale Verwurzelung" },
 ];
 
@@ -17,30 +17,27 @@ export default function AboutSection() {
               <span className="h-px w-10 bg-brand-gold" />
               Über uns
             </p>
-            <h2 className="heading-font text-5xl uppercase text-brand-black md:text-6xl">
-              Wir stehen für Qualität am Bau
+            <h2 className="heading-font text-4xl uppercase text-brand-black md:text-5xl md:leading-tight">
+              Wir stehen für Qualität, Struktur und Verlässlichkeit am Bau
             </h2>
             <p className="mt-6 text-brand-black/80">
-              MB Bau GmbH vereint handwerkliche Präzision mit verlässlicher Projektsteuerung. Wir
-              begleiten private und gewerbliche Bauherren von der ersten Idee bis zur finalen
-              Abnahme.
+              Die MB Bau UG verbindet handwerkliche Ausführung mit klarer Organisation und moderner
+              Projektsteuerung. Unser Anspruch ist es, Bauprojekte effizient, sauber und
+              termingerecht umzusetzen.
             </p>
             <p className="mt-4 text-brand-black/80">
-              Ob Neubau, Sanierung oder Ausbau: Unser Team arbeitet termintreu, transparent und
-              lösungsorientiert. Regional verwurzelt, modern aufgestellt und mit klarem Anspruch an
-              Qualität.
+              Wir arbeiten für private und gewerbliche Auftraggeber und begleiten Projekte von der
+              Planung bis zur Fertigstellung — transparent, lösungsorientiert und zuverlässig.
             </p>
           </div>
 
           <aside className="relative border border-brand-black bg-brand-black p-8 text-brand-white">
             <span className="absolute left-4 top-4 h-6 w-6 border-l-2 border-t-2 border-brand-gold" />
             <span className="absolute bottom-4 right-4 h-6 w-6 border-b-2 border-r-2 border-brand-gold" />
-            <p className="heading-font text-4xl uppercase leading-tight">
+            <p className="heading-font text-3xl uppercase leading-tight md:text-4xl">
               Wir bauen nicht nur Gebäude — wir bauen Vertrauen.
             </p>
-            <p className="mt-6 text-sm uppercase tracking-wider text-brand-gold">
-              — MB Bau GmbH Geschäftsführung
-            </p>
+            <p className="mt-6 text-sm uppercase tracking-wider text-brand-gold">— MB Bau UG</p>
           </aside>
         </div>
 

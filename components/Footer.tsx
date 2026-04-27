@@ -1,4 +1,5 @@
 import BrandLogo from "./BrandLogo";
+import { sitePhone, sitePhoneTel } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -13,17 +14,16 @@ export default function Footer() {
             <a href="#kontakt">Kontakt</a>
           </div>
           <a
-            href="tel:+490123456789"
+            href={sitePhoneTel}
             className="rounded-md border border-brand-gold px-4 py-2 text-sm font-semibold text-brand-gold"
           >
-            Jetzt anrufen
+            {sitePhone}
           </a>
         </div>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">
-          <span>© 2025 MB Bau GmbH</span>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
+          <span>© 2026 MB Bau UG</span>
+          <span>Impressum &amp; Datenschutz folgen</span>
         </div>
       </div>
     </footer>
