@@ -9,7 +9,6 @@ import BrandLogo from "./BrandLogo";
 const links = [
   { href: "#ueber-uns", label: "Über uns" },
   { href: "#leistungen", label: "Leistungen" },
-  { href: "#projekte", label: "Projekte" },
   { href: "#kontakt", label: "Kontakt" },
 ];
 
