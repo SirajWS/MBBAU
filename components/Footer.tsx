@@ -1,5 +1,5 @@
 import BrandLogo from "./BrandLogo";
-import { siteBrandName, sitePhone, sitePhoneTel } from "@/lib/site";
+import { siteBrandName, sitePhoneContacts } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -13,21 +13,21 @@ export default function Footer() {
             <a href="#projekte">Projekte</a>
             <a href="#kontakt">Kontakt</a>
           </div>
-          {sitePhoneTel ? (
-            <a
-              href={sitePhoneTel}
-              className="rounded-md border border-brand-gold px-4 py-2 text-sm font-semibold text-brand-gold transition hover:bg-brand-gold/10"
-            >
-              {sitePhone}
-            </a>
-          ) : (
-            <span
-              className="rounded-md border border-brand-white/35 px-4 py-2 text-sm font-semibold text-brand-white/80"
-              title="Telefonnummer folgt"
-            >
-              {sitePhone}
-            </span>
-          )}
+          <div className="flex flex-col items-stretch gap-2 sm:items-end">
+            {sitePhoneContacts.map((c) => (
+              <a
+                key={c.tel}
+                href={c.tel}
+                title={`${c.role}${c.name ? ` — ${c.name}` : ""}`}
+                className="rounded-md border border-brand-gold px-4 py-2 text-right text-sm font-semibold text-brand-gold transition hover:bg-brand-gold/10"
+              >
+                <span className="block text-[10px] font-normal uppercase tracking-wider text-brand-white/70">
+                  {c.role}
+                </span>
+                <span className="block tabular-nums">{c.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">

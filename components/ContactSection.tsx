@@ -1,7 +1,14 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { siteAddress, siteEmail, sitePhone, sitePhoneTel, siteRegion } from "@/lib/site";
+import {
+  siteAddress,
+  siteEmail,
+  sitePhoneContacts,
+  siteRegion,
+  siteWebsiteLabel,
+  siteWebsiteUrl,
+} from "@/lib/site";
 
 type ContactFormValues = {
   name: string;
@@ -51,14 +58,31 @@ export default function ContactSection() {
           <dl className="mt-8 space-y-3 text-brand-black/85">
             <div>
               <dt className="font-semibold">Telefon:</dt>
+              <dd className="space-y-4">
+                {sitePhoneContacts.map((c) => (
+                  <div key={c.tel}>
+                    <p className="text-sm text-brand-black/65">
+                      {c.role}
+                      {c.name ? ` · ${c.name}` : ""}
+                    </p>
+                    <a href={c.tel} className="text-lg font-semibold hover:text-brand-gold">
+                      {c.label}
+                    </a>
+                  </div>
+                ))}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-semibold">Website:</dt>
               <dd>
-                {sitePhoneTel ? (
-                  <a href={sitePhoneTel} className="text-lg font-semibold hover:text-brand-gold">
-                    {sitePhone}
-                  </a>
-                ) : (
-                  <span className="text-lg font-semibold text-brand-black">{sitePhone}</span>
-                )}
+                <a
+                  href={siteWebsiteUrl}
+                  className="hover:text-brand-gold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {siteWebsiteLabel}
+                </a>
               </dd>
             </div>
             <div>
