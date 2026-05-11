@@ -55,18 +55,20 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
       </svg>
 
       {!compact ? (
-        <div>
-          <p className={`heading-font text-lg uppercase tracking-[0.1em] sm:text-xl ${textMain}`}>
-            MB <span className="text-brand-gold">BAU</span>
+        <div className="min-w-0">
+          <p
+            className={`heading-font text-base uppercase tracking-[0.08em] sm:text-lg md:text-xl ${textMain}`}
+          >
+            MB <span className="text-brand-gold">BAU WORKS</span>
           </p>
           <p className={`text-[10px] uppercase leading-tight tracking-[0.2em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.
           </p>
         </div>
       ) : (
-        <div>
-          <p className={`heading-font text-base uppercase tracking-[0.08em] ${textMain}`}>
-            MB <span className="text-brand-gold">BAU</span>
+        <div className="min-w-0">
+          <p className={`heading-font text-xs uppercase tracking-[0.06em] sm:text-sm md:text-base ${textMain}`}>
+            MB <span className="text-brand-gold">BAU WORKS</span>
           </p>
           <p className={`text-[9px] uppercase leading-tight tracking-[0.16em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.

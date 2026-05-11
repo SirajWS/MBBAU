@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
-import { siteBrandName, siteLegalName } from "@/lib/site";
+import { siteBrandName, siteDomain, siteLegalName } from "@/lib/site";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: `${siteBrandName}: Ausbau, Renovierung, Trockenbau, Baustellenservice und Projektkoordination. Transparent und professionell. Rechtlich: ${siteLegalName}.`,
   keywords: [
     siteBrandName,
+    siteDomain,
     "MB BAU UG",
     "Trockenbau",
     "Renovierung",

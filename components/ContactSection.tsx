@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { siteEmail, sitePhone, sitePhoneTel, siteRegion } from "@/lib/site";
+import { siteAddress, siteEmail, sitePhone, sitePhoneTel, siteRegion } from "@/lib/site";
 
 type ContactFormValues = {
   name: string;
@@ -67,7 +67,7 @@ export default function ContactSection() {
             </div>
             <div>
               <dt className="font-semibold">Adresse:</dt>
-              <dd>Musterstraße 12, 10115 Berlin (bitte anpassen)</dd>
+              <dd>{siteAddress}</dd>
             </div>
             <div>
               <dt className="font-semibold">Öffnungszeiten:</dt>
