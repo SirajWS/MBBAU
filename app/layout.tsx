@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     siteBrandName,
     siteDomain,
     "MB BAU UG",
+    "UG i.G.",
     "Trockenbau",
     "Renovierung",
     "Innenausbau",

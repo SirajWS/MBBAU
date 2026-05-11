@@ -1,4 +1,4 @@
-import { siteBrandName } from "@/lib/site";
+import { siteBrandName, siteLegalFormLine } from "@/lib/site";
 
 type BrandLogoProps = {
   compact?: boolean;
@@ -12,6 +12,7 @@ type BrandLogoProps = {
 export default function BrandLogo({ compact = false, onDark = false }: BrandLogoProps) {
   const textMain = onDark ? "text-brand-white" : "text-brand-black";
   const textSub = onDark ? "text-brand-white/75" : "text-brand-gold";
+  const textLegal = onDark ? "text-brand-white/55" : "text-brand-black/55";
   const markBg = onDark ? "#141414" : "#ffffff";
   const markStroke = onDark ? "rgba(255,255,255,0.2)" : "rgba(17,17,17,0.12)";
   const letterFill = onDark ? "#f8f8f8" : "#111111";
@@ -26,7 +27,7 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
         preserveAspectRatio="xMidYMid meet"
         className={sizeClass}
         role="img"
-        aria-label={siteBrandName}
+        aria-label={`${siteBrandName}, ${siteLegalFormLine}`}
       >
         <rect x="0.5" y="0.5" width="91" height="65" rx="5" fill={markBg} stroke={markStroke} />
         <path
@@ -61,7 +62,12 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
           >
             MB <span className="text-brand-gold">BAU WORKS</span>
           </p>
-          <p className={`text-[10px] uppercase leading-tight tracking-[0.2em] ${textSub}`}>
+          <p
+            className={`mt-0.5 text-[9px] font-medium uppercase leading-tight tracking-[0.14em] sm:text-[10px] ${textLegal}`}
+          >
+            {siteLegalFormLine}
+          </p>
+          <p className={`mt-0.5 text-[10px] uppercase leading-tight tracking-[0.2em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.
           </p>
         </div>
@@ -70,7 +76,12 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
           <p className={`heading-font text-xs uppercase tracking-[0.06em] sm:text-sm md:text-base ${textMain}`}>
             MB <span className="text-brand-gold">BAU WORKS</span>
           </p>
-          <p className={`text-[9px] uppercase leading-tight tracking-[0.16em] ${textSub}`}>
+          <p
+            className={`mt-0.5 text-[7px] font-medium uppercase leading-tight tracking-[0.12em] sm:text-[8px] ${textLegal}`}
+          >
+            {siteLegalFormLine}
+          </p>
+          <p className={`mt-0.5 text-[9px] uppercase leading-tight tracking-[0.16em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.
           </p>
         </div>

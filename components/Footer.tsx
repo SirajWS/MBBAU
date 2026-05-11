@@ -1,5 +1,5 @@
 import BrandLogo from "./BrandLogo";
-import { siteBrandName, sitePhoneContacts } from "@/lib/site";
+import { siteBrandName, siteLegalName, sitePhoneContacts } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -30,9 +30,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">
-          <span>© 2026 {siteBrandName}</span>
-          <span>Impressum &amp; Datenschutz folgen</span>
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">
+            <span>© 2026 {siteBrandName}</span>
+            <span>Impressum &amp; Datenschutz folgen</span>
+          </div>
+          <p className="max-w-xl text-center text-[10px] leading-snug text-brand-white/45">{siteLegalName}</p>
         </div>
       </div>
     </footer>

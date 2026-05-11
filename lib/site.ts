@@ -11,8 +11,17 @@ export const siteWebsiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.mbbauworks.com";
 export const siteWebsiteLabel = "www.mbbauworks.com";
 
-/** Eintrag im Handelsregister / Impressum. */
-export const siteLegalName = "MB BAU UG (haftungsbeschränkt)";
+/**
+ * Klein unter dem Wordmark (Header/Footer-Logo), solange die UG noch nicht eingetragen ist.
+ * Nach HR-Eintrag: Zeile entfernen oder durch eingetragenen Zusatz ersetzen.
+ */
+export const siteLegalFormLine = "UG (haftungsbeschränkt) i. G.";
+
+/**
+ * Vollständiger rechtlicher Name (Meta, Footer-Hinweis, später Impressum).
+ * Nach HR-Eintrag: auf „MB BAU UG (haftungsbeschränkt)“ ohne „ i. G.“ umstellen.
+ */
+export const siteLegalName = "MB BAU UG (haftungsbeschränkt) i. G.";
 
 export type SitePhoneContact = {
   role: string;
