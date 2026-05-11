@@ -9,8 +9,9 @@ export const siteDomain = "mbbauworks.com";
 /** Eintrag im Handelsregister / Impressum. */
 export const siteLegalName = "MB BAU UG (haftungsbeschränkt)";
 
-export const sitePhone = process.env.NEXT_PUBLIC_PHONE ?? "+49 (0) 30 123 45 67";
-export const sitePhoneTel = process.env.NEXT_PUBLIC_PHONE_TEL ?? "tel:+49301234567";
+/** Anzeige; echte Nummer später per NEXT_PUBLIC_PHONE / NEXT_PUBLIC_PHONE_TEL. */
+export const sitePhone = process.env.NEXT_PUBLIC_PHONE ?? "+49 (0) -- --- -- --";
+export const sitePhoneTel = (process.env.NEXT_PUBLIC_PHONE_TEL ?? "").trim();
 export const siteWhatsAppUrl = process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/49301234567";
 export const siteEmail = "info@mbbauworks.com";
 export const siteRegion = "Berlin & Umgebung";

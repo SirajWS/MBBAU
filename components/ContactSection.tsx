@@ -52,9 +52,13 @@ export default function ContactSection() {
             <div>
               <dt className="font-semibold">Telefon:</dt>
               <dd>
-                <a href={sitePhoneTel} className="text-lg font-semibold hover:text-brand-gold">
-                  {sitePhone}
-                </a>
+                {sitePhoneTel ? (
+                  <a href={sitePhoneTel} className="text-lg font-semibold hover:text-brand-gold">
+                    {sitePhone}
+                  </a>
+                ) : (
+                  <span className="text-lg font-semibold text-brand-black">{sitePhone}</span>
+                )}
               </dd>
             </div>
             <div>

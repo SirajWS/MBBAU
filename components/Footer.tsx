@@ -13,12 +13,21 @@ export default function Footer() {
             <a href="#projekte">Projekte</a>
             <a href="#kontakt">Kontakt</a>
           </div>
-          <a
-            href={sitePhoneTel}
-            className="rounded-md border border-brand-gold px-4 py-2 text-sm font-semibold text-brand-gold"
-          >
-            {sitePhone}
-          </a>
+          {sitePhoneTel ? (
+            <a
+              href={sitePhoneTel}
+              className="rounded-md border border-brand-gold px-4 py-2 text-sm font-semibold text-brand-gold transition hover:bg-brand-gold/10"
+            >
+              {sitePhone}
+            </a>
+          ) : (
+            <span
+              className="rounded-md border border-brand-white/35 px-4 py-2 text-sm font-semibold text-brand-white/80"
+              title="Telefonnummer folgt"
+            >
+              {sitePhone}
+            </span>
+          )}
         </div>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">
