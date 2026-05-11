@@ -1,5 +1,5 @@
 import BrandLogo from "./BrandLogo";
-import { siteLegalName, sitePhone, sitePhoneTel } from "@/lib/site";
+import { siteBrandName, sitePhone, sitePhoneTel } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-brand-white/70">
-          <span>© 2026 {siteLegalName}</span>
+          <span>© 2026 {siteBrandName}</span>
           <span>Impressum &amp; Datenschutz folgen</span>
         </div>
       </div>
