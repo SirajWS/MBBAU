@@ -10,7 +10,7 @@ import {
   ReceiptText,
   ShieldCheck,
 } from "lucide-react";
-import { siteRegion } from "@/lib/site";
+import { siteBrandName, siteRegion } from "@/lib/site";
 
 const highlightStats = [
   { line1: "Zuverlässige", line2: "Planung", Icon: CalendarCheck2 },
@@ -48,7 +48,7 @@ export default function HeroSection() {
           <div>
             <motion.div variants={item} className="mb-5 flex flex-wrap items-center gap-3">
               <span className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-gold">
-                MB Bau UG
+                {siteBrandName}
               </span>
               <span className="rounded-full border border-brand-black/15 bg-white/80 px-3 py-1 text-xs font-semibold uppercase text-brand-black/80">
                 {siteRegion}

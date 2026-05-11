@@ -1,4 +1,5 @@
 import { Award, BadgeCheck, Building, Handshake } from "lucide-react";
+import { siteBrandName } from "@/lib/site";
 
 const indicators = [
   { icon: Award, text: "Strukturierte Projektabwicklung" },
@@ -21,7 +22,7 @@ export default function AboutSection() {
               Wir stehen für Qualität, Struktur und Verlässlichkeit am Bau
             </h2>
             <p className="mt-6 text-brand-black/80">
-              Die MB Bau UG verbindet handwerkliche Ausführung mit klarer Organisation und moderner
+              {siteBrandName} verbindet handwerkliche Ausführung mit klarer Organisation und moderner
               Projektsteuerung. Unser Anspruch ist es, Bauprojekte effizient, sauber und
               termingerecht umzusetzen.
             </p>
@@ -37,7 +38,7 @@ export default function AboutSection() {
             <p className="heading-font text-3xl uppercase leading-tight md:text-4xl">
               Wir bauen nicht nur Gebäude — wir bauen Vertrauen.
             </p>
-            <p className="mt-6 text-sm uppercase tracking-wider text-brand-gold">— MB Bau UG</p>
+            <p className="mt-6 text-sm uppercase tracking-wider text-brand-gold">— {siteBrandName}</p>
           </aside>
         </div>
 

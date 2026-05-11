@@ -1,3 +1,5 @@
+import { siteBrandName } from "@/lib/site";
+
 type BrandLogoProps = {
   compact?: boolean;
   onDark?: boolean;
@@ -24,7 +26,7 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
         preserveAspectRatio="xMidYMid meet"
         className={sizeClass}
         role="img"
-        aria-label="MB Bau UG"
+        aria-label={siteBrandName}
       >
         <rect x="0.5" y="0.5" width="91" height="65" rx="5" fill={markBg} stroke={markStroke} />
         <path
@@ -55,7 +57,7 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
       {!compact ? (
         <div>
           <p className={`heading-font text-lg uppercase tracking-[0.1em] sm:text-xl ${textMain}`}>
-            MB <span className="text-brand-gold">Bau</span> UG
+            MB <span className="text-brand-gold">BAU</span>
           </p>
           <p className={`text-[10px] uppercase leading-tight tracking-[0.2em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.
@@ -64,7 +66,7 @@ export default function BrandLogo({ compact = false, onDark = false }: BrandLogo
       ) : (
         <div>
           <p className={`heading-font text-base uppercase tracking-[0.08em] ${textMain}`}>
-            MB <span className="text-brand-gold">Bau</span> UG
+            MB <span className="text-brand-gold">BAU</span>
           </p>
           <p className={`text-[9px] uppercase leading-tight tracking-[0.16em] ${textSub}`}>
             Bauen. Sanieren. Vertrauen.

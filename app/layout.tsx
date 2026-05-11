@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
+import { siteBrandName, siteLegalName } from "@/lib/site";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -15,18 +16,18 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "MB Bau UG – Trockenbau, Renovierung & Innenausbau",
-  description:
-    "MB Bau UG: Ausbau, Renovierung, Trockenbau, Baustellenservice und Projektkoordination. Transparent und professionell.",
+  title: `${siteBrandName} – Trockenbau, Renovierung & Innenausbau`,
+  description: `${siteBrandName}: Ausbau, Renovierung, Trockenbau, Baustellenservice und Projektkoordination. Transparent und professionell. Rechtlich: ${siteLegalName}.`,
   keywords: [
-    "MB Bau UG",
+    siteBrandName,
+    "MB BAU UG",
     "Trockenbau",
     "Renovierung",
     "Innenausbau",
     "Baukoordination",
   ],
   openGraph: {
-    title: "MB Bau UG – Bauen. Sanieren. Vertrauen.",
+    title: `${siteBrandName} – Bauen. Sanieren. Vertrauen.`,
     description:
       "Ausbau, Renovierung und Baukoordination – eigene Leistungen und qualifizierte Partner.",
     images: ["/og-image-placeholder.jpg"],

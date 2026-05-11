@@ -1,4 +1,5 @@
 import { BadgeEuro, Handshake, MessageSquareText, ShieldCheck, Sparkles } from "lucide-react";
+import { siteBrandName } from "@/lib/site";
 
 const items = [
   {
@@ -34,9 +35,9 @@ export default function WhyUsSection() {
       <div className="mx-auto max-w-7xl">
         <p className="mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-brand-gold">
           <span className="h-px w-10 bg-brand-gold" />
-          Warum MB Bau?
+          Stärken
         </p>
-        <h2 className="heading-font text-4xl uppercase md:text-5xl">Warum MB Bau UG?</h2>
+        <h2 className="heading-font text-4xl uppercase md:text-5xl">Warum {siteBrandName}?</h2>
       </div>
 
       <div className="mx-auto mt-10 grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
