@@ -8,6 +8,7 @@ import {
   Drill,
   Hammer,
   HardHat,
+  Home,
   Layers,
   PaintRoller,
   Ruler,
@@ -23,6 +24,18 @@ type ServiceItem = {
 };
 
 const services: ServiceItem[] = [
+  {
+    title: "Kompletter Familienhausbau",
+    description:
+      "Wir realisieren moderne Familienhäuser — von der Planung bis zur Fertigstellung. Gemeinsam mit qualifizierten Fachpartnern koordinieren und begleiten wir alle Bauphasen effizient, zuverlässig und transparent.",
+    points: [
+      "Planung und Projektabstimmung",
+      "Koordination qualifizierter Fachpartner",
+      "Begleitung aller Bauphasen",
+      "Transparente Abwicklung bis zur Fertigstellung",
+    ],
+    icon: Home,
+  },
   {
     title: "Trockenbau – Hauptbereich",
     description:
