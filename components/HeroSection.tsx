@@ -1,26 +1,24 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import {
   CalendarCheck2,
-  ClipboardCheck,
   Handshake,
-  HardHat,
   MapPin,
   ReceiptText,
   ShieldCheck,
 } from "lucide-react";
 import { siteBrandName, siteRegion } from "@/lib/site";
 
-const highlightStats = [
-  { line1: "Zuverlässige", line2: "Planung", Icon: CalendarCheck2 },
-  { line1: "Saubere", line2: "Ausführung", Icon: ClipboardCheck },
-  { line1: "Klare", line2: "Abstimmung", Icon: Handshake },
+const highlights = [
+  { line1: "Sauber", line2: "Ausgeführt" },
+  { line1: "Klar", line2: "Abgestimmt" },
+  { line1: "Zuverlässig", line2: "Koordiniert" },
 ];
 
 const trustBar = [
   { text: "Strukturierte Projektabwicklung", Icon: ShieldCheck },
-  { text: "DIN-gerechte Ausführung", Icon: HardHat },
+  { text: "Sorgfältige Ausführung", Icon: CalendarCheck2 },
   { text: "Transparente Angebote", Icon: ReceiptText },
   { text: "Regionale Verwurzelung", Icon: MapPin },
 ];
@@ -54,29 +52,37 @@ export default function HeroSection() {
                 {siteRegion}
               </span>
             </motion.div>
+
             <motion.h1
               variants={item}
               className="heading-font text-[2.4rem] uppercase leading-[0.95] text-brand-black md:text-[4.2rem] lg:text-[5.25rem]"
             >
-              Ihr Partner für Bau und Sanierung
+              Ausbau, Renovierung
+              <br />
+              <span className="text-brand-gold">&amp; Baukoordination</span>
+              <br />
+              in Berlin
               <span className="text-brand-gold">.</span>
             </motion.h1>
+
             <motion.p variants={item} className="mt-6 max-w-2xl text-lg text-brand-black/75">
-              Ausbau, Renovierung und Baukoordination aus einer Hand. Eigene Leistungen und starke
-              Partner für alle weiteren Gewerke.
+              Zulassungsfreie Ausbau- und Servicearbeiten führen wir selbst durch.
+              Weitere Gewerke realisieren wir gemeinsam mit qualifizierten Fachpartnern &ndash;
+              alles aus einer Hand koordiniert.
             </motion.p>
+
             <motion.div variants={item} className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#kontakt"
                 className="rounded-md bg-brand-gold px-6 py-3 font-semibold text-brand-black transition hover:-translate-y-0.5"
               >
-                Kostenlos anfragen
+                Angebot anfragen
               </a>
               <a
                 href="#leistungen"
                 className="rounded-md border border-brand-black/30 bg-white px-6 py-3 font-semibold text-brand-black transition hover:-translate-y-0.5"
               >
-                Unsere Leistungen
+                Leistungen ansehen
               </a>
             </motion.div>
           </div>
@@ -86,21 +92,18 @@ export default function HeroSection() {
             className="justify-self-stretch rounded-sm bg-brand-black p-6 text-white shadow-2xl lg:max-w-md lg:justify-self-end"
           >
             <ul className="space-y-4">
-              {highlightStats.map((row) => {
-                const Icon = row.Icon;
-                return (
-                  <li
-                    key={row.line1}
-                    className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0"
-                  >
-                    <Icon className="h-6 w-6 shrink-0 text-brand-gold" />
-                    <p className="heading-font text-2xl uppercase leading-tight sm:text-3xl">
-                      <span className="text-white">{row.line1} </span>
-                      <span className="text-brand-gold">{row.line2}</span>
-                    </p>
-                  </li>
-                );
-              })}
+              {highlights.map((row) => (
+                <li
+                  key={row.line1}
+                  className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0"
+                >
+                  <Handshake className="h-6 w-6 shrink-0 text-brand-gold" />
+                  <p className="heading-font text-2xl uppercase leading-tight sm:text-3xl">
+                    <span className="text-white">{row.line1} </span>
+                    <span className="text-brand-gold">{row.line2}</span>
+                  </p>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </motion.div>

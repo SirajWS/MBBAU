@@ -25,14 +25,14 @@ type ServiceItem = {
 
 const services: ServiceItem[] = [
   {
-    title: "Kompletter Familienhausbau",
+    title: "Bauprojekt-Koordination",
     description:
-      "Wir realisieren moderne Familienhäuser — von der Planung bis zur Fertigstellung. Gemeinsam mit qualifizierten Fachpartnern koordinieren und begleiten wir alle Bauphasen effizient, zuverlässig und transparent.",
+      "Wir koordinieren und begleiten Bauprojekte von der Abstimmung bis zur Fertigstellung. Eigenleistungen führen wir direkt aus – weitere Gewerke realisieren wir gemeinsam mit qualifizierten Fachpartnern.",
     points: [
       "Planung und Projektabstimmung",
       "Koordination qualifizierter Fachpartner",
       "Begleitung aller Bauphasen",
-      "Transparente Abwicklung bis zur Fertigstellung",
+      "Transparente Abwicklung bis zur Übergabe",
     ],
     icon: Home,
   },
@@ -211,7 +211,7 @@ export default function ServicesSection() {
               href="#kontakt"
               className="rounded-md bg-brand-gold px-5 py-3 text-sm font-semibold text-brand-black transition hover:-translate-y-0.5"
             >
-              Kostenlos anfragen
+              Angebot anfragen
             </a>
             <a
               href="#kontakt"

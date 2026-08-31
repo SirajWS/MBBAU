@@ -1,61 +1,49 @@
-/** Kontakt – in Produktion per .env setzen: NEXT_PUBLIC_PHONE, NEXT_PUBLIC_PHONE_TEL, NEXT_PUBLIC_WHATSAPP_URL */
+﻿/**
+ * Alle oeffentlich sichtbaren Firmendaten hier pflegen.
+ * Nicht in einzelnen Komponenten hardcoden.
+ */
 
-/** Öffentliche Marke (Website, Logo-Text, Fließtext). */
+// --- Marke & Anzeige ---------------------------------------------------------
 export const siteBrandName = "MB BAU WORKS";
+export const siteDisplayName = "MB Bau Works";
 
-/** Öffentliche Domain (Vorschau / später canonical & Links). */
+// --- Domain & URL ------------------------------------------------------------
 export const siteDomain = "mbbauworks.com";
-
-/** Öffentliche Website (Kontakt, später ggf. canonical). */
 export const siteWebsiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.mbbauworks.com";
 export const siteWebsiteLabel = "www.mbbauworks.com";
 
-/**
- * Klein unter dem Wordmark (Header/Footer-Logo), solange die UG noch nicht eingetragen ist.
- * Nach HR-Eintrag: Zeile entfernen oder durch eingetragenen Zusatz ersetzen.
- */
-export const siteLegalFormLine = "UG (haftungsbeschränkt) i. G.";
+// --- Rechtliche Firmierung ---------------------------------------------------
+export const siteLegalName = "MB Bau Works UG (haftungsbeschränkt)";
+export const siteLegalFormLine = "UG (haftungsbeschränkt)";
 
-/**
- * Vollständiger rechtlicher Name (Meta, Footer-Hinweis, später Impressum).
- * Nach HR-Eintrag: auf „MB BAU UG (haftungsbeschränkt)“ ohne „ i. G.“ umstellen.
- */
-export const siteLegalName = "MB BAU UG (haftungsbeschränkt) i. G.";
+// --- Handelsregister ---------------------------------------------------------
+export const siteRegisterCourt = "Amtsgericht Charlottenburg";
+export const siteRegisterNumber = "HRB 289411 B";
 
-export type SitePhoneContact = {
-  role: string;
-  /** z. B. Name in Klammern — optional */
-  name?: string;
-  label: string;
-  tel: string;
-};
+// --- Geschaeftsfuehrung ------------------------------------------------------
+export const siteManagingDirector = "Siraj Bettaieb";
 
-/** Feste Kontaktnummern (können per NEXT_PUBLIC_PHONE / NEXT_PUBLIC_PHONE_TEL nur die primäre Zeile überschreiben). */
-export const sitePhoneContacts: readonly SitePhoneContact[] = [
-  {
-    role: "Operative Leitung",
-    name: "Mohamed Bagdadi (MB)",
-    label: "+49 163 5863436",
-    tel: "tel:+491635863436",
-  },
-  {
-    role: "Geschäftsführer",
-    label: "+49 176 83838626",
-    tel: "tel:+4917683838626",
-  },
-] as const;
-
-const primaryPhone = sitePhoneContacts[0];
-
-/** Primäre Anzeige (z. B. Footer) — per Env überschreibbar. */
-export const sitePhone = process.env.NEXT_PUBLIC_PHONE ?? primaryPhone.label;
-export const sitePhoneTel = (process.env.NEXT_PUBLIC_PHONE_TEL ?? primaryPhone.tel).trim();
-
-/** WhatsApp: operative Leitung (Mobil), per Env überschreibbar. */
-export const siteWhatsAppUrl =
-  process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/491635863436";
-
+// --- Kontakt -----------------------------------------------------------------
+export const sitePhone =
+  process.env.NEXT_PUBLIC_PHONE ?? "+49 176 83838626";
+export const sitePhoneTel =
+  (process.env.NEXT_PUBLIC_PHONE_TEL ?? "tel:+4917683838626").trim();
 export const siteEmail = "info@mbbauworks.com";
+export const siteWhatsAppUrl =
+  process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/4917683838626";
+
+// --- Anschrift ---------------------------------------------------------------
+export const siteStreet = "Yorckstraße 12";
+export const sitePostalCode = "10965";
+export const siteCity = "Berlin";
+export const siteCountry = "Deutschland";
+export const siteCountryCode = "DE";
+export const siteAddress = `${siteStreet}, ${sitePostalCode} ${siteCity}`;
+
+// --- Einsatzgebiet & Geschaeftszeiten ----------------------------------------
 export const siteRegion = "Berlin & Umgebung";
-export const siteAddress = "Yorckstraße 12, 10965 Berlin";
+export const siteAreaServed = "Berlin und Umgebung";
+export const siteBusinessHours = "Mo.–Fr. 07:00–18:00 Uhr";
+/** Fuer schema.org openingHours */
+export const siteBusinessHoursSchema = ["Mo-Fr 07:00-18:00"];

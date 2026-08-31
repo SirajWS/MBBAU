@@ -1,41 +1,17 @@
-const projects = [
-  {
-    name: "Neubau EFH Musterhausen",
-    category: "Neubau",
-    scope: "Rohbau, Trockenbau, Fliesenarbeiten",
-    focus: "Von der Planung bis zur schlüsselfertigen Übergabe",
-  },
-  {
-    name: "Betonsanierung Brücke B14",
-    category: "Sanierung",
-    scope: "Betoninstandsetzung und Tragwerksverstärkung",
-    focus: "Substanzerhalt mit DIN-gerechter Ausführung",
-  },
-  {
-    name: "Trockenbauausbau Bürogebäude",
-    category: "Trockenbau",
-    scope: "Innenausbau, Decken- und Trennwandsysteme",
-    focus: "Flexible Raumkonzepte für moderne Arbeitswelten",
-  },
-  {
-    name: "Fliesenprojekt Wellnessbad",
-    category: "Fliesen",
-    scope: "Großformat-Fliesen, Abdichtung, Detailarbeiten",
-    focus: "Präzise Verarbeitung für langlebige Oberflächen",
-  },
-  {
-    name: "Abbruch Industriehalle",
-    category: "Abbruch",
-    scope: "Rückbau inkl. Entsorgung und Baustellenlogistik",
-    focus: "Sicherer Ablauf mit sauberer Baustellenkoordination",
-  },
-  {
-    name: "Stahlbau Lagerhalle",
-    category: "Stahlbau",
-    scope: "Stahlkonstruktion mit Montage und Korrosionsschutz",
-    focus: "Tragfähige Konstruktionen mit hoher Präzision",
-  },
-];
+/**
+ * ProjectsSection -- Referenzen & Projekte
+ *
+ * Diese Sektion ist aktuell NICHT in app/page.tsx eingebunden.
+ * Echte Projektreferenzen werden nach Freigabe durch den Betreiber ergaenzt.
+ *
+ * Anforderungen fuer echte Referenzen:
+ * - Projektart (z. B. Trockenbau, Renovierung)
+ * - Ort nur allgemein (z. B. Berlin-Kreuzberg)
+ * - Leistungsumfang
+ * - Zeitraum (z. B. Q1 2026)
+ * - Keine Kundennamen, keine Privatadressen, keine Rechnungsbetraege
+ * - Fotos nur mit Nutzungsrechten des Unternehmens
+ */
 
 export default function ProjectsSection() {
   return (
@@ -48,33 +24,17 @@ export default function ProjectsSection() {
         <h2 className="heading-font text-5xl uppercase text-brand-black md:text-6xl">
           Referenzen & Projekte
         </h2>
-
-        <p className="mt-4 max-w-3xl text-sm text-brand-black/70">
-          Beispielhafte Projektarten aus unserem Leistungsspektrum – so wird deutlich, welche
-          Aufgaben wir professionell und strukturiert anpacken.
+        <p className="mt-6 max-w-2xl text-brand-black/70">
+          Wir arbeiten derzeit an der Zusammenstellung unserer Referenzprojekte.
+          Sprechen Sie uns gerne direkt an &ndash; wir informieren Sie ueber abgeschlossene Arbeiten.
         </p>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article
-              key={project.name}
-              className="rounded-md border border-brand-black/10 bg-brand-offwhite p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="mb-3 inline-block rounded-full bg-brand-gold px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-black">
-                {project.category}
-              </span>
-              <h3 className="heading-font text-3xl uppercase text-brand-black">{project.name}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-brand-black/75">{project.scope}</p>
-              <div className="mt-6 flex items-center justify-between border-t border-brand-black/10 pt-4">
-                <span className="text-xs uppercase tracking-[0.2em] text-brand-black/60">
-                  Projektfokus
-                </span>
-                <span className="text-right text-sm font-semibold text-brand-black">
-                  {project.focus}
-                </span>
-              </div>
-            </article>
-          ))}
+        <div className="mt-8">
+          <a
+            href="#kontakt"
+            className="rounded-md bg-brand-gold px-6 py-3 font-semibold text-brand-black transition hover:-translate-y-0.5 inline-block"
+          >
+            Angebot anfragen
+          </a>
         </div>
       </div>
     </section>
