@@ -154,10 +154,10 @@ export async function POST(req: NextRequest) {
   try {
     w3fJson = await w3fResponse.json();
   } catch {
-    console.error(
-      "[contact] Web3Forms-Antwort konnte nicht geparst werden. HTTP Status:",
-      w3fResponse.status
-    );
+    console.error("[contact] Web3Forms request failed", {
+      status: w3fResponse.status,
+      note: "invalid JSON response",
+    });
     return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
   }
 
@@ -168,10 +168,15 @@ export async function POST(req: NextRequest) {
     (w3fJson as Record<string, unknown>).success === true;
 
   if (!isSuccess) {
-    console.error(
-      "[contact] Web3Forms hat keinen Erfolg bestaetigt. HTTP Status:",
-      w3fResponse.status
-    );
+    const w3fData =
+      typeof w3fJson === "object" && w3fJson !== null
+        ? (w3fJson as Record<string, unknown>)
+        : {};
+    console.error("[contact] Web3Forms request failed", {
+      status: w3fResponse.status,
+      success: w3fData.success,
+      message: w3fData.message ?? w3fData.error ?? "unknown",
+    });
     return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
   }
 
