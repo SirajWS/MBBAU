@@ -94,16 +94,16 @@ export default function DatenschutzPage() {
             </p>
           </section>
 
-          {/* 4. Kontaktformular */}
+          {/* 4. Kontakt per E-Mail und Telefon */}
           <section>
             <h2 className="heading-font text-2xl uppercase text-brand-black mb-3">
-              4. Kontaktformular & E-Mail-Kontakt
+              4. Kontakt per E-Mail und Telefon
             </h2>
             <p>
-              Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden Ihre
-              übermittelten Angaben (Name, E-Mail-Adresse, Telefonnummer, Projektort, Leistungswunsch
-              und Projektbeschreibung) zur Bearbeitung Ihrer Anfrage und für den Fall von
-              Anschlussfragen bei uns gespeichert.
+              Wenn Sie uns per E-Mail oder telefonisch kontaktieren, werden Ihre übermittelten
+              Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer und Ihr Anliegen) zur Bearbeitung
+              Ihrer Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Eine
+              Weitergabe an Dritte findet nicht statt.
             </p>
             <p className="mt-3">
               <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung).
@@ -112,12 +112,6 @@ export default function DatenschutzPage() {
               <strong>Speicherdauer:</strong> Wir löschen die Daten, sobald sie für den Zweck ihrer
               Erhebung nicht mehr erforderlich sind, spätestens nach Ablauf der handels- und
               steuerrechtlichen Aufbewahrungsfristen.
-            </p>
-            <p className="mt-3">
-              {/* TODO: E-Mail-Anbieter eintragen, sobald bestaetigt */}
-              <strong>E-Mail-Versand:</strong> Für den Versand von Anfragen an uns wird ein
-              E-Mail-Dienstleister eingesetzt.{" "}
-              <strong className="text-brand-black/50">[TODO: E-Mail-Anbieter und dessen Datenschutzhinweis hier eintragen]</strong>
             </p>
           </section>
 
