@@ -35,6 +35,10 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// Generische Fehlermeldung fuer den Client – kein interner Detail-Leak
+const GENERIC_ERROR =
+  "Ihre Anfrage konnte leider nicht gesendet werden. Bitte kontaktieren Sie uns direkt unter info@mbbauworks.com oder +49 176 83838626.";
+
 // ---------------------------------------------------------------------------
 // POST /api/contact
 // ---------------------------------------------------------------------------
@@ -90,25 +94,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Nachricht fehlt." }, { status: 422 });
   }
 
-  // ------------------------------------------------------------------
-  // TODO: E-Mail-Versand konfigurieren.
-  //
-  // Empfehlung: Resend (https://resend.com) oder Nodemailer mit SMTP.
-  //
-  // Beispiel mit Resend:
-  //   import { Resend } from "resend";
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({
-  //     from: "noreply@mbbauworks.com",
-  //     to: "info@mbbauworks.com",
-  //     subject: `Neue Anfrage: ${service} (${plz})`,
-  //     text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nOrt/PLZ: ${plz}\nLeistung: ${service}\n\n${message}`,
-  //   });
-  //
-  // Erforderliche Umgebungsvariable: RESEND_API_KEY (in .env.local eintragen)
-  // ------------------------------------------------------------------
-
-  // Temporaer: Anfrage serverseitig protokollieren (nur im Dev-Modus sichtbar)
+  // Dev-Logging (keine vollstaendigen Formulardaten in Produktion)
   if (process.env.NODE_ENV === "development") {
     console.info("[contact] Neue Anfrage:", {
       name,
@@ -118,6 +104,75 @@ export async function POST(req: NextRequest) {
       service,
       messageLength: message.length,
     });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Access Key pruefen – muss als Vercel Environment Variable vorliegen
+  // ---------------------------------------------------------------------------
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
+    console.error("[contact] WEB3FORMS_ACCESS_KEY ist nicht konfiguriert.");
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 500 });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Serverseitiger Request an Web3Forms
+  // ---------------------------------------------------------------------------
+  let w3fResponse: Response;
+  try {
+    w3fResponse = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        name,
+        email,
+        ...(phone ? { phone } : {}),
+        plz,
+        service,
+        message,
+        subject: `Neue Projektanfrage – ${service} – ${plz}`,
+        replyto: email,
+      }),
+    });
+  } catch (fetchErr) {
+    console.error(
+      "[contact] Netzwerkfehler beim Kontakt zu Web3Forms:",
+      fetchErr instanceof Error ? fetchErr.message : "Unbekannter Fehler"
+    );
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Web3Forms-Antwort pruefen: HTTP-Status UND JSON-Success-Flag
+  // HTTP 200 / { ok: true } nur bei bestaetigendem Erfolg von Web3Forms.
+  // ---------------------------------------------------------------------------
+  let w3fJson: unknown;
+  try {
+    w3fJson = await w3fResponse.json();
+  } catch {
+    console.error(
+      "[contact] Web3Forms-Antwort konnte nicht geparst werden. HTTP Status:",
+      w3fResponse.status
+    );
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
+  }
+
+  const isSuccess =
+    w3fResponse.ok &&
+    typeof w3fJson === "object" &&
+    w3fJson !== null &&
+    (w3fJson as Record<string, unknown>).success === true;
+
+  if (!isSuccess) {
+    console.error(
+      "[contact] Web3Forms hat keinen Erfolg bestaetigt. HTTP Status:",
+      w3fResponse.status
+    );
+    return NextResponse.json({ error: GENERIC_ERROR }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });
